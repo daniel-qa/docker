@@ -28,4 +28,25 @@ if(0):
 
         os.system(cmd)
 
+# login
+if(0):
+        os.system('docker login')
+        # daniel7lin
 
+
+# tag
+if(1):
+        imageID ='cec4ad63eb26'
+        imageName = 'daniel7lin/ies2-app:v1'
+        os.system('docker tag cec4ad63eb26 daniel7lin/ies2-app:v1')
+
+# push
+if(0):
+        registry ='daniel7lin/ies2-app:v1'
+        cmd = ' docker push ' + registry
+        print(cmd)
+
+        os.system(cmd)
+
+
+        

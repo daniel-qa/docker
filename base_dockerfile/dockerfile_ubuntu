@@ -3,3 +3,5 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN atp-get install ssh -y
 CMD ["/bin/bash" ]
+
+# or CMD ["/apache-tomcat-7.0.82/bin/catalina.sh", "run"]

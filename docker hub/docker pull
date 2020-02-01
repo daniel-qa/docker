@@ -1,1 +1,1 @@
-docker push daniel7lin/ies2-app:tagname
+docker push daniel7lin/ies2-app:v1

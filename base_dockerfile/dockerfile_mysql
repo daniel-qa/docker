@@ -1,4 +1,4 @@
-ROM mysql:5.7
+FROM mysql:5.7
 MAINTAINER Daniel
 ENV MYSQL_ROOT_PASSWORD=$db_root_pw 
 RUN apt-get update -y \

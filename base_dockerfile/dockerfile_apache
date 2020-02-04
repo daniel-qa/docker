@@ -1,0 +1,4 @@
+FROM daniel7lin/ies2-app:v1
+RUN sudo apt-get install net-tools -y
+COPY start.sh /
+CMD ["/start.sh"]

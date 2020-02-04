@@ -1,10 +1,11 @@
 ROM mysql:5.7
 MAINTAINER Daniel
-ENV MYSQL_ROOT_PASSWORD=$db_root_pw
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install sudo -y
-RUN sudo apt-get install net-tools -y
-RUN sudo apt-get install ssh -y
-RUN sudo apt-get install ftp -y
+ENV MYSQL_ROOT_PASSWORD=$db_root_pw 
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install sudo -y \
+    && apt-get install net-tools -y \
+    && apt-get install ssh -y \
+    && apt-get install ftp -y \
+    && apt-get install wget -y
 

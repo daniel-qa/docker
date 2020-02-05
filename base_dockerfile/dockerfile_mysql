@@ -7,5 +7,6 @@ RUN apt-get update -y \
     && apt-get install net-tools -y \
     && apt-get install ssh -y \
     && apt-get install ftp -y \
-    && apt-get install wget -y
+    && apt-get install wget -y \
+    && apt-get install nano -y
 

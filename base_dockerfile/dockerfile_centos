@@ -1,0 +1,7 @@
+FROM centos:6.8
+RUN yum update -y
+RUN yum upgrade -y
+RUN yum install ssh -y
+CMD ["/bin/bash" ]
+
+# or CMD ["/apache-tomcat-7.0.82/bin/catalina.sh", "run"]

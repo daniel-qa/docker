@@ -1,7 +1,17 @@
 FROM ubuntu:16.04
+MAINTAINER daniel
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN atp-get install ssh -y
+# MySql
+ENV MYSQL_PWD 80650390
+RUN echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
+RUN echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
+RUN apt-get -y install mysql-server
+RUN sudo usermod -d /var/lib/mysql/ mysql
 CMD ["/bin/bash" ]
+# copy start shell
 
-# or CMD ["/apache-tomcat-7.0.82/bin/catalina.sh", "run"]
+# use start.sh to trigger service
+# COPY start.sh /opt/start.sh
+# CMD ["/opt/start.sh", "run"]

@@ -1,17 +1,22 @@
 FROM ubuntu:16.04
 MAINTAINER daniel
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN atp-get install ssh -y
-# MySql
 ENV MYSQL_PWD 80650390
-RUN echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
-RUN echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
-RUN apt-get -y install mysql-server
-RUN sudo usermod -d /var/lib/mysql/ mysql
-CMD ["/bin/bash" ]
-# copy start shell
-
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install ssh -y \
+    && apt-get install inetutils-ping -y \
+    && apt-get install lynx -y \
+    && apt-get install ftp -y \
+    && apt-get install ssh -y \
+    && apt-get install vsftpd -y \
+    && apt-get install rsync -y \
+    && apt-get install nano -y \
+    && apt-get upgrade -y \
+    && echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections \
+    && echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections \
+    && apt-get install mysql-server -y \
+    && usermod -d /var/lib/mysql/ mysql
+#CMD ["/bin/bash"]
 # use start.sh to trigger service
-# COPY start.sh /opt/start.sh
-# CMD ["/opt/start.sh", "run"]
+COPY start.sh /
+CMD ["/start.sh"]

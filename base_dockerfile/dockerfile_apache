@@ -4,3 +4,4 @@ COPY start.sh /
 CMD ["/start.sh"]
 
 # docker run 的 時候，記得不要用 /bin/bash 指令，會覆堅掉原本的 start.sh
+# sh 檔案記得要加上 +x 的可執檔屬性 ( chmod xxx.sh +x )

@@ -22,5 +22,5 @@ RUN apt-get update -y \
 CMD ["/bin/bash" ]
 
 # use start.sh to trigger service
-# COPY start.sh /opt/start.sh
-# CMD ["/opt/start.sh", "run"]
+# COPY start.sh /start.sh
+# CMD ["/start.sh"]

@@ -7,3 +7,12 @@ RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 USER docker
 CMD /bin/bash
+
+
+
+# 以下為 ENV 設定使用者密碼
+# ENV USER_PWD 80650390
+# RUN apt-get install libpam-cracklib -y
+# RUN useradd -m rd
+# RUN echo "rd:${USER_PWD}" | chpasswd
+# RUN adduser rd sudo

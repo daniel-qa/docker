@@ -23,8 +23,8 @@ RUN apt-get update -y \
     && pip install mysql-connector \
     && apt install python-mysqldb -y   
 
-CMD ["/bin/bash" ]
+#CMD ["/bin/bash" ]
 
 # use start.sh to trigger service
-# COPY start.sh /
-# CMD ["/start.sh"]
+COPY start.sh /
+CMD ["/start.sh"]

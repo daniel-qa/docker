@@ -19,9 +19,9 @@ RUN apt-get update -y \
     && usermod -d /var/lib/mysql/ mysql \
     && apt-get install sudo -y \
     && apt install python -y \
-	&& apt install python-pip -y \
-	&& pip install mysql-connector \
-	&& apt install python-mysqldb -y   
+    && apt install python-pip -y \
+    && pip install mysql-connector \
+    && apt install python-mysqldb -y   
 
 CMD ["/bin/bash" ]
 

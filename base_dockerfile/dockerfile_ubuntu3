@@ -17,7 +17,11 @@ RUN apt-get update -y \
     && echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections \
     && apt-get install mysql-server -y \
     && usermod -d /var/lib/mysql/ mysql \
-    && apt-get install sudo -y
+    && apt-get install sudo -y \
+    && apt install python -y \
+	&& apt install python-pip -y \
+	&& pip install mysql-connector \
+	&& apt install python-mysqldb -y   
 
 CMD ["/bin/bash" ]
 

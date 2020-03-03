@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER daniel
 ENV MYSQL_PWD 80650390
+ENV USER_PWD 80650390
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install ssh -y \
@@ -21,7 +22,11 @@ RUN apt-get update -y \
     && apt install python -y \
     && apt install python-pip -y \
     && pip install mysql-connector \
-    && apt install python-mysqldb -y   
+    && apt install python-mysqldb -y \   
+    && apt-get install libpam-cracklib -y \
+    && useradd -m rd \
+    && echo "rd:${USER_PWD}" | chpasswd \
+    && adduser rd sudo
 
 #CMD ["/bin/bash" ]
 

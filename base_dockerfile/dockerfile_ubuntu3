@@ -27,6 +27,7 @@ RUN apt-get update -y \
     && useradd -m rd \
     && echo "rd:${USER_PWD}" | chpasswd \
     && adduser rd sudo
+USER root
 
 #CMD ["/bin/bash" ]
 

@@ -1,1 +1,37 @@
-dockerfile_ubuntu18
+FROM ubuntu:18.04
+MAINTAINER daniel
+ENV MYSQL_PWD 80650390
+ENV USER_PWD 80650390
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install ssh -y \
+    && apt-get install sshpass -y \
+    && apt-get install inetutils-ping -y \
+    && atp-get install net-tools -y \
+    && apt-get install lynx -y \
+    && apt-get install ftp -y \
+    && apt-get install ssh -y \
+    && apt-get install vsftpd -y \
+    && apt-get install rsync -y \
+    && apt-get install nano -y \
+    && apt-get upgrade -y \
+    && echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections \
+    && echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections \
+    && apt-get install mysql-server -y \
+    && usermod -d /var/lib/mysql/ mysql \
+    && apt-get install sudo -y \
+    && apt install python -y \
+    && apt install python-pip -y \
+    && pip install mysql-connector \
+    && apt install python-mysqldb -y \   
+    && apt-get install libpam-cracklib -y \
+    && useradd -m rd \
+    && echo "rd:${USER_PWD}" | chpasswd \
+    && adduser rd sudo \
+USER root
+
+#CMD ["/bin/bash" ]
+
+# use start.sh to trigger service
+COPY start.sh /
+CMD ["/start.sh"]

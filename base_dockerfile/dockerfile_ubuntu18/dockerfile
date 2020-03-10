@@ -27,7 +27,7 @@ RUN apt-get update -y \
     && apt-get install libpam-cracklib -y \
     && useradd -m rd \
     && echo "rd:${USER_PWD}" | chpasswd \
-    && adduser rd sudo \
+    && adduser rd sudo
 USER root
 
 #CMD ["/bin/bash" ]

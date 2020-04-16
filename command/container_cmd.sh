@@ -10,5 +10,7 @@ docker exec eede6d35b47d /bin/ping localhost
 docker exec mysql_mysql-master_1 /bin/ping localhost
 
 
+# 容器裡 dump db
+mysqldump -uroot -proot publicitem_ies_tw > /docker-entrypoint-initdb.d/publicitem_ies_tw.sql
 
  

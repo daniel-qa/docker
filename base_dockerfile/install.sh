@@ -11,4 +11,5 @@ apt install nano -y
 # account
 apt install sudo -y
 apt install sshpass -y
+apt install python -y
 

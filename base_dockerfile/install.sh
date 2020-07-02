@@ -7,3 +7,5 @@ apt install iputils-ping -y
 apt install sshpass -y
 # Edit
 apt install nano -y
+
+# account

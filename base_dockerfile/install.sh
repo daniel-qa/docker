@@ -9,3 +9,5 @@ apt install sshpass -y
 apt install nano -y
 
 # account
+apt install sudo -y
+

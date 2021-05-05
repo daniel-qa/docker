@@ -6,3 +6,6 @@ docker run --name some-mysql \
 
 
 
+# If you would like to see a complete list of available options, just run:
+# docker run -it --rm mysql:tag --verbose --help
+

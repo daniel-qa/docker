@@ -10,5 +10,5 @@ docker-compose up -d
 docker-compose down
 
 
-# check status
+# Check status
  docker-compose ps

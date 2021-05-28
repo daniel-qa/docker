@@ -8,3 +8,7 @@ docker-compose up -d
 
 # Stop the application stack
 docker-compose down
+
+
+# check status
+ docker-compose ps

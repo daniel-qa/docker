@@ -1,5 +1,8 @@
 要將 Export 的 tar 檔，先 Import 成 image，再用 Docker run , 才能啟動新的容器環境
 
+docker export BB7 > BB7_0902.tar
+cat BB7_0902.tar | docker import - ubuntu:20.04.php7
+
 # Export 與 Import
 
  - docker export  

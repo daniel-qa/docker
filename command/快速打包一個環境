@@ -1,0 +1,24 @@
+要將 Export 的 tar 檔，先 Import 成 image，再用 Docker run , 才能啟動新的容器環境
+
+# Export 與 Import
+
+ - docker export  
+  將容器存成本機檔案
+ Ex:
+ docker export 243c32535da7 > ubuntu.tar
+ 
+ docker export BB7 > BB7_0902.tar
+ 
+ - docker import 
+  將容器匯入為image
+
+  cat BB7_0902.tar | docker import - ubuntu:20.04.php7
+
+  Import from a local file
+
+  如果指定單個文件，則必須指定主機內的完整路徑
+  cat exampleimage.tgz | docker import - exampleimagelocal:new
+
+  docker export  - Export a container’s filesystem as a tar archive
+  docker import -  Import the contents from a tarball to create a filesystem image
+  匯入與匯出Image ( 容量較大，只有當下記錄)

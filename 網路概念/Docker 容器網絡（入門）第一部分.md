@@ -2,5 +2,5 @@
 ### HOST mode:
 使用和主機一樣的Port
 ```
- docker run –d –-name nginx-1 **–net=host** nginx
+ docker run –d –-name nginx-1 –net=host nginx
 ```

@@ -1,5 +1,8 @@
 import os,sys
 
+// 也可以在build的時候用flag使用
+// $ docker build --cache-from=alpine:latest -t app/test .
+
 '''
 commit : some docker useful docker command
 Author : daniel

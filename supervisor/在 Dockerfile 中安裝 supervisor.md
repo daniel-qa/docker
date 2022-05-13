@@ -3,6 +3,7 @@
 #1 在 Dockerfile 中安裝 supervisor
 
 RUN apt-get install -y supervisor
+
 #2 像這樣為主管創建一個配置文件（名為 supervisord.conf ）
 
  [include]

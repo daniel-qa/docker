@@ -1,10 +1,8 @@
+# 1 在 Dockerfile 中安裝 supervisor
 ```
-
-#1 在 Dockerfile 中安裝 supervisor
-
 RUN apt-get install -y supervisor
 ```
-#2 像這樣為主管創建一個配置文件（名為 supervisord.conf ）
+# 2 像這樣為主管創建一個配置文件（名為 supervisord.conf ）
 ```
 [include]
 
@@ -34,9 +32,9 @@ nodaemon=true
 [supervisorctl]
 ```
 
-```
-#3 將supervisor conf文件複製到docker
+# 3 將supervisor conf文件複製到docker
 
+```
 COPY supervisord.conf /etc/supervisord.conf
 #4 定義入口點
 

@@ -48,3 +48,23 @@ services:
 STORAGE_PATH=/home/deploy/xxxx
 CURRENT_UID=1001:1001
  ```
+* www-data 用戶
+```
+* 伺服器 Ｗeb server(Apache or Nginx) 是誰
+在系統裡由 www-data 這個系統使用者表示
+因此在將專案的擁有群組設為 www-data
+sudo chown -R sarahcheng.www-data shopping_cart/
+sudo chmod -R 755 shopping_cart/
+drwx r-x r-x
+
+* www-data 是什麼
+www-data 是一個 system user。給 web servers 使用的特定 user/group。 
+設定某資料夾為 www-data 是希望 web servers 不要有太高的權限，
+同時讓 web application 適當進行寫入。
+
+```
+
+```
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+
+```

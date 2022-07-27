@@ -1,6 +1,6 @@
 
 
-* 1.搜索有apache的docker image:
+* 1. 搜索有apache的docker image:
 ```
 docker search httpd
 ```

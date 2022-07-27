@@ -1,10 +1,9 @@
 
 https://hub.docker.com/_/httpd
 
-* 直接執行
+* 直接執行 Apache 服務
 ```
 docker run -dit --name MyApache -p 8080:80 httpd:2.4
-
 ```
 
 <hr class="hr1"/>

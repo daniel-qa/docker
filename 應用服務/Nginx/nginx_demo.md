@@ -27,6 +27,8 @@ docker pull nginx
 docker run --name mynginx -p 8080:80 -v ./index.html:
            /usr/share/nginx/html -d nginx
            
+docker run --name mynginx -p 8080:80  -d nginx
+           
 ```
 
 瀏覽器輸入 localhost:8080 

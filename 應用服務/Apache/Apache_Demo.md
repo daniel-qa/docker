@@ -1,6 +1,13 @@
 
 https://hub.docker.com/_/httpd
 
+* 直接執行
+```
+docker run -dit --name MyApache -p 8080:80 httpd:2.4
+
+```
+
+<hr class="hr1"/>
 
 * Build & Run Apache
 ```

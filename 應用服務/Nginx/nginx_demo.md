@@ -30,8 +30,8 @@ docker run --name mynginx -p 8080:80 -v ./index.html:
 ```
 
 瀏覽器輸入 localhost:8080 
-
-> 會出現  **Hello world!** 的字樣
+會出現 Hello world!** 的字樣
+> **Hello world!**
 
 如果沒有設定 index.html
 則會出現 nginx 預設字樣

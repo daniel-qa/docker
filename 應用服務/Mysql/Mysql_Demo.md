@@ -9,6 +9,7 @@ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
 https://kubernetes.io/zh-cn/docs/tasks/run-application/run-single-instance-stateful-application/
 
 ##  k8s
+* mysql-deployment.yaml 
 ```
 apiVersion: v1
 kind: Service

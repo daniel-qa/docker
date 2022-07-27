@@ -22,7 +22,10 @@ https://medium.com/@xroms123/docker-%E5%BB%BA%E7%AB%8B-nginx-%E5%9F%BA%E7%A4%8E%
 docker pull nginx 
 
 ```
+* 啟動Nginx container
+```
+docker run --name mynginx -p 8080:80 -v ./index.html:
+           /usr/share/nginx/html -d nginx
+           
+```
 
-
-
-docker run nginx 

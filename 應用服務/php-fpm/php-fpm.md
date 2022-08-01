@@ -17,9 +17,9 @@ $ docker run -it --rm --name my-running-app my-php-app
 
 
 * Run a single PHP script
-For many simple, single file projects, 
-you may find it inconvenient to write a complete Dockerfile. 
-In such cases, you can run a PHP script by using the PHP Docker image directly:
+> For many simple, single file projects, 
+> you may find it inconvenient to write a complete Dockerfile. 
+> In such cases, you can run a PHP script by using the PHP Docker image directly:
 
 ```
 $ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.4-cli php your-script.php

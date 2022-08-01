@@ -21,7 +21,7 @@ mysqldump -uroot -proot publicitem_ies_tw > /docker-entrypoint-initdb.d/publicit
 ```
  
 * --rm
-跑完就不再使用的，可以在執行時加上 --rm 參數，當容器終止時會自動刪除，很方便
+> 跑完就不再使用的，可以在執行時加上 --rm 參數，當容器終止時會自動刪除，很方便
 ```
 docker run --rm hello-world
 ```

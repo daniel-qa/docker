@@ -1,3 +1,8 @@
+* Build 映象檔
+```
+docker build -t php-fpm:sok_v1 .
+```
+
 * 查看有什麼 image
 ```
 docker search ubuntu

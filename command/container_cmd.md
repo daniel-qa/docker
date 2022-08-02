@@ -1,6 +1,6 @@
 * Build 映象檔
 ```
-docker build -t php-fpm:sok_v1 .
+docker build -t sokcloud_nginx:latest-7.4
 ```
 
 * 查看有什麼 image

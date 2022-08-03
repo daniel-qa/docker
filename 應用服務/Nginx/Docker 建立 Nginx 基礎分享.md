@@ -81,3 +81,4 @@ docker run --name container名字 -p 8080:80 -d image名字
 docker run --name mynginx -p 8080:80 -d mynginx:latest
 
 ```
+成功後可以在瀏覽器看到 Hello World!

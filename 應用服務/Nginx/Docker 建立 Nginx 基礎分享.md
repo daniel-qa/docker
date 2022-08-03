@@ -28,6 +28,9 @@ docker run --name mynginx -p 8080:80 -v ./:
            /usr/share/nginx/html -d nginx
 ```
 ## 使用Dockerfile建立Nginx環境：
+
+### 先建立下面三個檔案
+
 * index.html 
 ```
 <!DOCTYPE html>
@@ -61,3 +64,10 @@ FROM nginx
 COPY index.html /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 ```
+### 使用Dockerfile創建image
+
+沒輸入版本則為預設值latest
+```
+docker build -t mynginx:latest
+```
+

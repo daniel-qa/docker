@@ -15,3 +15,7 @@ index.html
 </body>
 </html>
 ```
+* 下載Nginx image
+```
+docker pull nginx
+```

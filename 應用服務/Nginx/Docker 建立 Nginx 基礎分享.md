@@ -61,6 +61,9 @@ server{
 * dockerfile
 ```
 FROM nginx
+# RUN apt update -y
+# RUN apt install php -y
+# RUN apt install php-fpm -y
 COPY index.html /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 ```

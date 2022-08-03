@@ -25,5 +25,5 @@ docker run --name container名稱 -p 8080:80 -v index.html所在路徑:
            /usr/share/nginx/html -d nginx
            
 docker run --name mynginx -p 8080:80 -v ./:
-           /usr/share/nginx/html -d nginx           
+           /usr/share/nginx/html -d nginx
 ```

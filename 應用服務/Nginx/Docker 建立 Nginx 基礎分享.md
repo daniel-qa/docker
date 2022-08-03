@@ -40,6 +40,8 @@ docker run --name mynginx -p 8080:80 -v ./:
   Hello world!
 </body>
 </html>
+```
+
 * nginx.conf
 ```
 server{

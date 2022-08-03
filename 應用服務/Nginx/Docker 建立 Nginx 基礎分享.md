@@ -68,6 +68,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 沒輸入版本則為預設值latest
 ```
-docker build -t mynginx:latest
+docker build -t mynginx:latest .
 ```
 

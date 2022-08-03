@@ -70,4 +70,14 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 ```
 docker build -t mynginx:latest .
 ```
+docker images 查看是否創建成功
+```
+docker images
+```
+* 創建並啟動 container
+```
+docker run --name container名字 -p 8080:80 -d image名字
 
+docker run --name mynginx -p 8080:80 -d mynginx:latest
+
+```

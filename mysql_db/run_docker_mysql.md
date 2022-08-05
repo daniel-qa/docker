@@ -19,5 +19,4 @@ p.s 如果有啟動問題，/var/lib/mysql 的資料夾，一般權限為 mysql
 
 ```
 chown -R mysql:mysql
-
 ```

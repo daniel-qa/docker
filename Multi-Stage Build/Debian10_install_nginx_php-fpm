@@ -4,10 +4,14 @@
 FROM Debain:10 AS builder
 RUN apk --no-cache add build-base
 
+
+# Nginx
 FROM builder AS build1
 COPY source1.cpp source.cpp
 RUN g++ -o /binary source.cpp
 
+
+# Php-Fpm
 FROM builder AS build2
 COPY source2.cpp source.cpp
 RUN g++ -o /binary source.cpp

@@ -2,6 +2,8 @@
 
 # syntax=docker/dockerfile:1
 FROM Debain:10 AS builder
+RUN apt-get update -y 
+
 RUN apk --no-cache add build-base
 
 

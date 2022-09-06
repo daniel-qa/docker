@@ -19,7 +19,7 @@ RUN apt-get install nginx -y
 COPY default /etc/nginx/sites-available/default
 
 ### Php-Fpm
-FROM builder AS build2
+FROM build1 AS build2
 
 # Install Depence
 RUN apt -y install lsb-release apt-transport-https ca-certificates 

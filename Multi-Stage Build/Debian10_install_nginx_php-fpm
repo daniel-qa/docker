@@ -1,24 +1,30 @@
 # Use a previous stage as a new stage
 
-# syntax=docker/dockerfile:1
+## Debian Base OS 
 FROM debian:10 AS builder
-RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install nano -y
+RUN apt-get update -y && apt-get upgrade -y && apt-get install sudo -y
+RUN apt-get install nano -y && apt-get install wget -y
+# Debug
+RUN apt-get install procps -y
 # start.sh
 RUN echo "#!/bin/bash" >> /start.sh && \
     echo "service nginx start" >> /start.sh && \
-    echo "/bin/bash" >> /start.sh && \
+	echo "service php7.4-fpm start" >> /start.sh && \
+    echo "/bin/bash" >> /start.sh && \	
 	chmod a+x /start.sh
-RUN apk --no-cache add build-base
 
-
-# Nginx
+## Nginx
 FROM builder AS build1
-COPY source1.cpp source.cpp
-RUN g++ -o /binary source.cpp
+RUN apt-get install nginx -y
+COPY default /etc/nginx/sites-available/default
 
-
-# Php-Fpm
+### Php-Fpm
 FROM builder AS build2
-COPY source2.cpp source.cpp
-RUN g++ -o /binary source.cpp
+
+# Install Depence
+RUN apt -y install lsb-release apt-transport-https ca-certificates 
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+RUN apt update
+# Install php-fpm
+RUN sudo apt -y install php7.4

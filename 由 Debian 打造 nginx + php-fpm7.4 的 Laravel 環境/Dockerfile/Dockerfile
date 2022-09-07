@@ -3,7 +3,7 @@
 ## Debian Base OS 
 FROM debian:10 AS builder
 RUN apt-get update -y && apt-get upgrade -y && apt-get install sudo -y
-RUN apt-get install nano -y && apt-get install wget -y
+RUN apt-get install nano -y && apt-get install wget -y && apt-get install curl -y
 # Debug
 RUN apt-get install procps -y
 # start.sh
@@ -33,7 +33,20 @@ RUN sudo apt install php7.4-fpm php7.4-common php7.4-mysql php7.4-gmp php7.4-cur
 		php7.4-intl php7.4-mbstring php7.4-xmlrpc php7.4-gd php7.4-xml php7.4-cli \
 		php7.4-zip php7.4-soap php7.4-imap -y
 
-# Add nginx to www-data group
-RUN sudo usermod -a -G www-data nginx
-# Change owner of directory to www-data
-RUN sudo chown -R www-data /var/www
+#RUN pecl docker-php-ext-enable
+#RUN docker-php-ext-install pdo_mysql bcmath
+##RUN pecl install -o -f redis && docker-php-ext-enable redis
+
+
+## Install Composer
+FROM build2 AS build3
+
+RUN apt-get update -y && apt-get install -y openssl zip unzip git
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+
+RUN apt-get install -y php-mbstring
+#RUN apt-get install -y php-pdo-mysql php-mbstring php-mysqli
+#RUN docker-php-ext-install pdo_mysql bcmath
+#RUN pecl install -o -f redis && docker-php-ext-enable redis
+

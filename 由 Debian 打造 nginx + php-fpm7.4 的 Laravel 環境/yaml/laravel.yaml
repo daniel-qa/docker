@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel
+  labels:
+    app: laravel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel
+  template:
+    metadata:
+      labels:
+        app: laravel
+    spec:
+      containers:
+      - name: laravel
+        image: myclusterregistry.azurecr.io/debian_laravel:latest
+        ports:
+        - containerPort: 80
+        command: ["/bin/sh"]
+        args: ["/start.sh"]
+        stdin: true
+        tty: true
+        volumeMounts:
+           - name: laravel-www
+             mountPath: /opt
+             
+#          - name: nginx
+#            mountPath: /etc/nginx/conf.d
+#          - name: sok-nas
+#            mountPath: /nas
+
+      volumes:
+        - name: laravel-www
+          persistentVolumeClaim:
+            claimName: laravel-www
+      
+#        - name: nginx
+#          persistentVolumeClaim:
+#            claimName: nginx-conf
+#        - name: sok-nas
+#          persistentVolumeClaim:
+#            claimName: sok-nas        
+
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: laravel
+#spec:
+#  type: LoadBalancer
+#  ports:
+#  - port: 80
+#  selector:
+#    app: laravel
+#
